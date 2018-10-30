@@ -21,7 +21,7 @@ const zipzap = n => {
 const pointInCircle = (r, x, y) => x ** 2 + y ** 2 <= r ** 2;
 //4
 const getWaterAmount = pitifulRoad => {
-    const roadLength = roadLength;
+    const roadLength = pitifulRoad.length;
     let left = [];
     let right = [];
     let waterLevel = 0;
@@ -39,9 +39,9 @@ const getWaterAmount = pitifulRoad => {
     for (let i = 0; i < roadLength; i++) {
         waterLevel += Math.min(left[i], right[i]) - pitifulRoad[i];
     }
+    
     return waterLevel;
 }
-
 //5
 const createSign = (privateKey, data) => {
     let sig = new KJUR.crypto.Signature({ "alg": "SHA1withRSA" });
